@@ -38,7 +38,7 @@ jobs:
           pandoc 33.md -o 33.docx
           pandoc 51.md -o 51.docx
           pandoc 15.md -o 15.pdf --pdf-engine=xelatex -V mainFont="Libertation Serif"
-          zip --junk-paths budo *.docx 15.md 33.md 51.md
+          zip --junk-paths budo *.docx 15.md 33.md 51.md *.pdf
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
