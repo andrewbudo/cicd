@@ -33,9 +33,11 @@ jobs:
           sudo apt install g++ -y
           g++ --version
           sudo apt install pandoc
+          sudo apt install texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra texlive-xetex texlive-lang-cyrillic -y
           pandoc 15.md -o 15.docx
           pandoc 33.md -o 33.docx
           pandoc 51.md -o 51.docx
+          pandoc 15.md -o 15.pdf --pdf-engine=xelatex -V mainFont="Libertation Serif"
           zip --junk-paths budo *.docx 15.md 33.md 51.md
       - name: Create Release
         id: create_release
