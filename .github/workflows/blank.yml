@@ -37,7 +37,7 @@ jobs:
           pandoc 33.md -o 33.docx
           pandoc 51.md -o 51.docx
           zip --junk-paths budo *.docx 15.md 33.md 51.md
-      - name: Build archive
+      - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -47,8 +47,8 @@ jobs:
           release_name: Release ${{ github.run_number }}
           draft: false
           prerelease: false
-      - name: Upload Releast
-        id: upload_release_asset
+      - name: Upload Release Asset
+        id: upload-release-asset
         uses: actions/upload_release_asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
