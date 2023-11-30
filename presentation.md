@@ -8,5 +8,9 @@ theme: Berlin
 # Slide 1
 Text 1
 
-# Slid3 2
-Text 2
+# Заголовок слайда 2
+Текст на кириллице
+
+$$
+\sqrt{\frac{41}{52^2}}
+$$
